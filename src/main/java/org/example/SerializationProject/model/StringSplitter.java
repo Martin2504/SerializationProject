@@ -8,6 +8,9 @@ public class StringSplitter {
 
 
     public static String[] splitString(String employeeDetails) {
+        if (employeeDetails==null){
+            return new String[]{""};
+        }
         String[] splitAtComma = employeeDetails.split(",");
         return  splitAtComma;
     }
