@@ -8,7 +8,7 @@ import java.util.List;
 public class EmployeeReturner {
     public static void returnEmployee(List<Employee> employee) {
         try {
-            FileWriter myWriter = new FileWriter("src/main/resources/EmployeeDetails.txt");
+            FileWriter myWriter = new FileWriter("/EmployeeDetails.txt");
             for(Employee e : employee){
                 myWriter.write("Employee ID: " + e.getEmployeeID() + "\n" +
                                      "Employee Name: " + e.getTitle() + " " + e.getFirstName() + " " + e.getMiddleInitial() + " " + e.getLastName() + "\n +" +
