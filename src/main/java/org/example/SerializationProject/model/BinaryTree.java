@@ -1,6 +1,10 @@
 package org.example.SerializationProject.model;
 
-// The binary tree which will hold the Employees
+import java.util.HashMap;
+import java.util.Map;
+
+// The binary tree which will hold the Employees.
+// This class handles Binary Tree operations.
 public class BinaryTree implements IBinaryTree{
 
     static Node root;
@@ -31,21 +35,26 @@ public class BinaryTree implements IBinaryTree{
     }
 
     @Override
-    public boolean findEmployeeByID(int id) {
-        if (root == null ) {
-            return false;
+    public Employee findEmployeeByID(int id) {
+        Employee employeeFoundByID = null;
+        if (root == null) {
+            System.out.println("Binary Tree not populated");
         } else if (root.getValue().getEmployeeID() == id) {
-            return true;
+            employeeFoundByID =  root.getValue();
         }
-        // If returns true ... Then call similar method to return an Employee
+
         tempNode = root;
-        boolean answer = Recursive.recursiveCall(id);
+        Map map = new HashMap();    // makeshift Map
+
+        if (!map.containsValue(3)) {        // Check if it's contained.
+            System.out.println("Name entered does not belong to the pool");
+        } else {
+            employeeFoundByID = Recursive.recursiveCall(id);
+        }
+
         tempNode = root;
 
-        // Similar method call goes here.
-        // Should return an employee.
-
-        return answer;
+        return employeeFoundByID;
 
     }
 }
