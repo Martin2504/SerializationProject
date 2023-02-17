@@ -44,17 +44,13 @@ public class BinaryTree implements IBinaryTree{
         }
 
         tempNode = root;
-        Map map = new HashMap();    // makeshift Map
-
-        if (!map.containsValue(3)) {        // Check if it's contained.
+        if (!EmployeeDataStructuresCreator.employeeMap.containsKey(id)) {        // Check if it's contained.
             System.out.println("Name entered does not belong to the pool");
         } else {
             employeeFoundByID = Recursive.recursiveCall(id);
         }
-
         tempNode = root;
 
         return employeeFoundByID;
-
     }
 }
