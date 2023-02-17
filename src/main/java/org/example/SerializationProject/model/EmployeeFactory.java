@@ -17,6 +17,8 @@ public class EmployeeFactory {
         // read all the records from the file and add them to the list
         while ((employeeLine = f.readLine()) != null)
             result.add(employeeLine);
+
+        result.remove(0);
         // randomise
         Collections.shuffle(result);
         // return the first numEmployees values as an array
