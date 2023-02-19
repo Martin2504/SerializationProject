@@ -44,7 +44,7 @@ public class Creator {
 
         List listOfIds = new ArrayList();
         listOfIds.addAll(EmployeeIDFinder.findEmployeeIDGivenLastName(lastname));
-        List finalListEmployee = new ArrayList();
+        List<Employee> finalListEmployee = new ArrayList();
         for(int i = 0; i<listOfIds.size(); i++){
             finalListEmployee.add(BinaryTree.findEmployeeByID((Integer) listOfIds.get(i)));
         }

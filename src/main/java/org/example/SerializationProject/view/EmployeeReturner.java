@@ -8,18 +8,20 @@ import java.util.List;
 public class EmployeeReturner {
     public static void returnEmployee(List<Employee> employee) {
         try {
-            FileWriter myWriter = new FileWriter("/EmployeeDetails.txt");
-            for(Employee e : employee){
-                myWriter.write("Employee ID: " + e.getEmployeeID() + "\n" +
-                                     "Employee Name: " + e.getTitle() + " " + e.getFirstName() + " " + e.getMiddleInitial() + " " + e.getLastName() + "\n +" +
-                                     "Employee Gender: " + e.getGender() + "\n" +
-                                     "Employee E-mail: " + e.geteMail() + "\n" +
-                                     "Employee DOB: " + e.getDOB() + "\n" +
-                                     "Employee DOJ: " + e.getDOJ() + "\n" +
-                                     "Employee Salary: " + e.getSalary() + "\n" +
-                                     "----------------------------------------");
+            FileWriter myWriter = new FileWriter("src/main/resources/EmployeeDetails.log");
+            if(employee!=null) {
+                for (Employee e : employee) {
+                    myWriter.write("Employee ID: " + e.getEmployeeID() + "\n" +
+                            "Employee Name: " + e.getTitle() + " " + e.getFirstName() + " " + e.getMiddleInitial() + " " + e.getLastName() + "\n" +
+                            "Employee Gender: " + e.getGender() + "\n" +
+                            "Employee E-mail: " + e.geteMail() + "\n" +
+                            "Employee DOB: " + e.getDOB() + "\n" +
+                            "Employee DOJ: " + e.getDOJ() + "\n" +
+                            "Employee Salary: " + e.getSalary() + "\n" +
+                            "----------------------------------------\n");
+                }
+                myWriter.close();
             }
-            myWriter.close();
         }
         catch (IOException e) {
             throw new RuntimeException(e);
