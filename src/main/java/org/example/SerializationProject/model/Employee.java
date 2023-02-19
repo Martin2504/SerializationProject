@@ -2,6 +2,8 @@ package org.example.SerializationProject.model;
 
 // This class represents an employee.
 
+import java.util.Objects;
+
 public class Employee {
 
     int employeeID;
@@ -61,5 +63,18 @@ public class Employee {
 
     public String getSalary() {
         return salary;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return employeeID == employee.employeeID && Objects.equals(title, employee.title) && Objects.equals(firstName, employee.firstName) && Objects.equals(middleInitial, employee.middleInitial) && Objects.equals(lastName, employee.lastName) && Objects.equals(gender, employee.gender) && Objects.equals(eMail, employee.eMail) && Objects.equals(DOB, employee.DOB) && Objects.equals(DOJ, employee.DOJ) && Objects.equals(salary, employee.salary);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(employeeID, title, firstName, middleInitial, lastName, gender, eMail, DOB, DOJ, salary);
     }
 }

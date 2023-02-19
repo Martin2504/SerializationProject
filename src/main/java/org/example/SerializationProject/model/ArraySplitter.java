@@ -4,9 +4,10 @@ package org.example.SerializationProject.model;
 // into Strings, separating each employee.
 
 public class ArraySplitter {
-    public static String splitArray(String[] EFOutput) {
-
-
-        return null;
+    public static String splitArray(String[] EFOutput,int index) {
+        if(EFOutput!=null) {
+                return EFOutput[index];
+        }
+        return "";
     }
 }
