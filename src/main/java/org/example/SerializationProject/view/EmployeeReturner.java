@@ -16,7 +16,8 @@ public class EmployeeReturner {
                                      "Employee E-mail: " + e.geteMail() + "\n" +
                                      "Employee DOB: " + e.getDOB() + "\n" +
                                      "Employee DOJ: " + e.getDOJ() + "\n" +
-                                     "Employee Salary: " + e.getSalary());
+                                     "Employee Salary: " + e.getSalary() + "\n" +
+                                     "----------------------------------------");
             }
             myWriter.close();
         }
