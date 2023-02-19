@@ -4,6 +4,6 @@ public interface IBinaryTree {
 
     void addElement(Employee element);
 
-    boolean findEmployeeByID(int ID);
+    Employee findEmployeeByID(int ID);
 
 }
