@@ -15,7 +15,7 @@ public class EmployeeIDFinder {
         List listOfIds = new ArrayList();
         for(Map.Entry<Integer, String> entry : employeeMap.entrySet()) {
 
-            if(entry.getValue().equals(lastname)) {
+            if(entry.getValue().toLowerCase().equals(lastname.toLowerCase())) {
                 listOfIds.add(entry.getKey());
             }
         }

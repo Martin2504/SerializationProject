@@ -13,7 +13,7 @@ public class EmployeeReturner {
             FileWriter myWriter = new FileWriter("src/main/resources/EmployeeDetails.log");
             if(employee.size()!=0) {
                 for (Employee e : employee) {
-                    myWriter.write("Employee ID: " + e.getEmployeeID() + "\n" +
+                    myWriter.append("Employee ID: " + e.getEmployeeID() + "\n" +
                             "Employee Name: " + e.getTitle() + " " + e.getFirstName() + " " + e.getMiddleInitial() + " " + e.getLastName() + "\n" +
                             "Employee Gender: " + e.getGender() + "\n" +
                             "Employee E-mail: " + e.geteMail() + "\n" +
