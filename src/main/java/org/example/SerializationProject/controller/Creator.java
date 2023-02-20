@@ -14,6 +14,7 @@ import java.util.logging.Logger;
 // Hence, 'creating' the project.
 // This will glue all the classes together. It's to be done last.
 public class Creator {
+
     public static String lastname;
     public static List<Employee> employeeList = new ArrayList<>();
 
@@ -40,7 +41,6 @@ public class Creator {
 
         System.out.print("give last name:");
         lastname = scanner.next();
-
 
         List listOfIds = new ArrayList();
         listOfIds.addAll(EmployeeIDFinder.findEmployeeIDGivenLastName(lastname));
