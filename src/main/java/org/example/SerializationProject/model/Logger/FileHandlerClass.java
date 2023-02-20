@@ -6,9 +6,9 @@ import java.util.logging.Level;
 
 public class FileHandlerClass {
 
-    static void getFileHandler(){
+    public static void getFileHandler(){
         try{
-            FileHandler fileHandler = new FileHandler("src/main/resources/logFile.log");
+            FileHandler fileHandler = new FileHandler("src/main/resources/EmployeeDetails.log");
             fileHandler.setLevel(Level.ALL);
             fileHandler.setFormatter(new FormatterClass());
             LoggerClass.logger.addHandler(fileHandler);

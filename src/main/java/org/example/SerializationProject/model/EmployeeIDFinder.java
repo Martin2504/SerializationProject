@@ -1,12 +1,26 @@
 package org.example.SerializationProject.model;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import static org.example.SerializationProject.controller.Creator.employeeMap;
+import static org.example.SerializationProject.controller.Creator.lastname;
+
 // This class takes the last name, searches the map, and returns the ID(s).
 public class EmployeeIDFinder {
-    public static int[] findEmployeeIDGivenLastName(String lastName) {
+    public static List findEmployeeIDGivenLastName(String lastName) {
 
-        // search the map and return a int array of all the ID's corresponding to the last name
+        // returns a list
+        List listOfIds = new ArrayList();
+        for(Map.Entry<Integer, String> entry : employeeMap.entrySet()) {
 
-        return null;
+            if(entry.getValue().equals(lastname)) {
+                listOfIds.add(entry.getKey());
+            }
+        }
+
+        return listOfIds;
     }
 
 }

@@ -1,16 +1,18 @@
 package org.example.SerializationProject.model;
 
+import org.example.SerializationProject.controller.Creator;
+
 import java.util.HashMap;
 import java.util.Map;
 
 // The binary tree which will hold the Employees.
 // This class handles Binary Tree operations.
-public class BinaryTree implements IBinaryTree{
+public class BinaryTree{
 
     static Node root;
     static Node tempNode = root;        // Basically serves as a pointer
 
-    @Override
+
     public void addElement(Employee element) {
         if (root == null) {
             root = new Node(element);
@@ -34,8 +36,8 @@ public class BinaryTree implements IBinaryTree{
         tempNode = root;
     }
 
-    @Override
-    public Employee findEmployeeByID(int id) {
+
+    public static Employee findEmployeeByID(int id) {
         Employee employeeFoundByID = null;
         if (root == null) {
             System.out.println("Binary Tree not populated");
@@ -44,7 +46,7 @@ public class BinaryTree implements IBinaryTree{
         }
 
         tempNode = root;
-        if (!EmployeeDataStructuresCreator.employeeMap.containsKey(id)) {        // Check if it's contained.
+        if (!Creator.employeeMap.containsKey(id)) {        // Check if it's contained.
             System.out.println("Name entered does not belong to the pool");
         } else {
             employeeFoundByID = Recursive.recursiveCall(id);
